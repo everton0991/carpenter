@@ -4,18 +4,18 @@ import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 import { useTranslation } from 'react-i18next';
 
-export default function TabOneScreen() {
+export default function SaintScreen() {
   const { t } = useTranslation();
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{t('Liturgy')}</Text>
+      <Text style={styles.title}>{t('Saint of the Day')}</Text>
       <View
         style={styles.separator}
         lightColor='#eee'
         darkColor='rgba(255,255,255,0.1)'
       />
-      <EditScreenInfo path='app/(tabs)/index.tsx' />
+      <EditScreenInfo path='app/(tabs)/saint.tsx' />
     </View>
   );
 }

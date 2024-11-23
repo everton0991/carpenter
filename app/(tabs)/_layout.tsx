@@ -2,9 +2,9 @@ import React from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
 import { Pressable } from 'react-native';
-
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
+import { useTranslation } from 'react-i18next';
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
@@ -15,6 +15,7 @@ function TabBarIcon(props: {
 }
 
 export default function TabLayout() {
+  const { t } = useTranslation();
   const colorScheme = useColorScheme();
 
   return (
@@ -24,9 +25,9 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name='index'
+        name='index '
         options={{
-          title: 'Tab One',
+          title: t('Liturgy'),
           tabBarIcon: ({ color }) => <TabBarIcon name='code' color={color} />,
           headerRight: () => (
             <Link href='/modal' asChild>
@@ -45,9 +46,23 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name='two'
+        name='homily'
         options={{
-          title: 'Tab Two',
+          title: t('Saint'),
+          tabBarIcon: ({ color }) => <TabBarIcon name='code' color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name='saint'
+        options={{
+          title: t('Homily'),
+          tabBarIcon: ({ color }) => <TabBarIcon name='code' color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name='settings'
+        options={{
+          title: t('Settings'),
           tabBarIcon: ({ color }) => <TabBarIcon name='code' color={color} />,
         }}
       />
