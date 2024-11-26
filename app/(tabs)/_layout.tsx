@@ -18,6 +18,7 @@ export default function TabLayout() {
   const { t } = useTranslation();
   const colorScheme = useColorScheme();
 
+  // TODO - Choose better icons
   return (
     <Tabs
       screenOptions={{
@@ -28,7 +29,7 @@ export default function TabLayout() {
         name='index'
         options={{
           title: t('Liturgy'),
-          tabBarIcon: ({ color }) => <TabBarIcon name='code' color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name='book' color={color} />,
           headerRight: () => (
             <Link href='/modal' asChild>
               <Pressable>
@@ -48,22 +49,22 @@ export default function TabLayout() {
       <Tabs.Screen
         name='homily'
         options={{
-          title: t('Saint'),
-          tabBarIcon: ({ color }) => <TabBarIcon name='code' color={color} />,
+          title: t('Homily'),
+          tabBarIcon: ({ color }) => <TabBarIcon name='subway' color={color} />,
         }}
       />
       <Tabs.Screen
         name='saint'
         options={{
-          title: t('Homily'),
-          tabBarIcon: ({ color }) => <TabBarIcon name='code' color={color} />,
+          title: t('Saint'),
+          tabBarIcon: ({ color }) => <TabBarIcon name='user-o' color={color} />,
         }}
       />
       <Tabs.Screen
         name='settings'
         options={{
           title: t('Settings'),
-          tabBarIcon: ({ color }) => <TabBarIcon name='code' color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name='gear' color={color} />,
         }}
       />
     </Tabs>
