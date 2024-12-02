@@ -1,10 +1,11 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { MonoText } from './StyledText';
+import { MonoText } from './Styled';
 import { Text, View } from './Themed';
 import { useTranslation } from 'react-i18next';
 
+// TODO - Delete this component
 export default function EditScreenInfo({ path }: { path: string }) {
   const { t } = useTranslation();
 

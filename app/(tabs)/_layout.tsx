@@ -19,54 +19,69 @@ export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   // TODO - Choose better icons
+  // TODO - This is a constant value should be outside render - Investigate translation state outside rendering
+  const menu = [
+    {
+      name: 'index',
+      title: t('Liturgy'),
+      icon: ({ color }: { color: string }) => (
+        <TabBarIcon name='book' color={color} />
+      ),
+      headerInfo: () => (
+        <Link href='/modal' asChild>
+          <Pressable>
+            {({ pressed }) => (
+              <FontAwesome
+                name='info-circle'
+                size={25}
+                color={Colors[colorScheme ?? 'light'].text}
+                style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+              />
+            )}
+          </Pressable>
+        </Link>
+      ),
+    },
+    {
+      name: 'homily',
+      title: t('Homily'),
+      icon: ({ color }: { color: string }) => (
+        <TabBarIcon name='subway' color={color} />
+      ),
+    },
+    {
+      name: 'saint',
+      title: t('Saint'),
+      icon: ({ color }: { color: string }) => (
+        <TabBarIcon name='user-o' color={color} />
+      ),
+    },
+    {
+      name: 'settings',
+      title: t('Settings'),
+      icon: ({ color }: { color: string }) => (
+        <TabBarIcon name='gear' color={color} />
+      ),
+    },
+  ];
+
   return (
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
       }}
     >
-      <Tabs.Screen
-        name='index'
-        options={{
-          title: t('Liturgy'),
-          tabBarIcon: ({ color }) => <TabBarIcon name='book' color={color} />,
-          headerRight: () => (
-            <Link href='/modal' asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name='info-circle'
-                    size={25}
-                    color={Colors[colorScheme ?? 'light'].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name='homily'
-        options={{
-          title: t('Homily'),
-          tabBarIcon: ({ color }) => <TabBarIcon name='subway' color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name='saint'
-        options={{
-          title: t('Saint'),
-          tabBarIcon: ({ color }) => <TabBarIcon name='user-o' color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name='settings'
-        options={{
-          title: t('Settings'),
-          tabBarIcon: ({ color }) => <TabBarIcon name='gear' color={color} />,
-        }}
-      />
+      {menu?.map((item, index) => (
+        <Tabs.Screen
+          key={index}
+          name={item.name}
+          options={{
+            title: item.title,
+            tabBarIcon: item.icon,
+            headerRight: item.headerInfo,
+          }}
+        />
+      ))}
     </Tabs>
   );
 }
