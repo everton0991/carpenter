@@ -17,9 +17,9 @@ export default function LiturgyTabs() {
   const colorScheme = useColorScheme();
 
   const routes = [
-    { key: 'first-reading', title: t('FIRST READING') },
-    { key: 'psalm', title: t('PSALM') },
-    { key: 'gospel', title: t('GOSPEL') },
+    { key: 'first-reading', title: t('1 LEITURA') },
+    { key: 'psalm', title: t('SALMO') },
+    { key: 'gospel', title: t('EVANGELHO') },
   ];
 
   const layout = useWindowDimensions();

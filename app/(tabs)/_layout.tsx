@@ -23,7 +23,7 @@ export default function TabLayout() {
   const menu = [
     {
       name: 'index',
-      title: t('Liturgy'),
+      title: t('Liturgia'),
       icon: ({ color }: { color: string }) => (
         <TabBarIcon name='book' color={color} />
       ),
@@ -44,14 +44,14 @@ export default function TabLayout() {
     },
     {
       name: 'homily',
-      title: t('Homily'),
+      title: t('Homilia'),
       icon: ({ color }: { color: string }) => (
         <TabBarIcon name='subway' color={color} />
       ),
     },
     {
       name: 'saint',
-      title: t('Saint'),
+      title: t('Santo do Dia'),
       icon: ({ color }: { color: string }) => (
         <TabBarIcon name='user-o' color={color} />
       ),

@@ -3,9 +3,11 @@ import { useTranslation } from 'react-i18next';
 import LiturgyTabs from '@/components/liturgy/LiturgyTabs';
 import { ContainerXStack } from '@/components/Styled';
 import { XStack, YStack } from 'tamagui';
+import { useLiturgyData } from '@/hooks/useLiturgyData';
 
 export default function TabOneScreen() {
   const { t } = useTranslation();
+  const { title, color, date } = useLiturgyData();
 
   // TODO - Move Date Header to its own component to be reused
   // TODO - Ideally move everything with styling to Themed.tsx
@@ -15,23 +17,23 @@ export default function TabOneScreen() {
         <XStack alignItems='center' gap='$4'>
           <YStack alignItems='center'>
             <Text fontSize='$10' fontWeight='bold'>
-              {t('26')}
+              {date.day}
             </Text>
 
             <Text fontSize='$6' fontWeight='bold'>
-              {t('Nov - 2024')}
+              {`${date.month} - ${date.year}`}
             </Text>
           </YStack>
 
           <YStack gap='$2'>
             <Text fontWeight='bold' fontSize='$5'>
-              {t('34th Week of Ordinary Time')}
+              {title}
             </Text>
             <Text fontWeight='bold' fontSize='$5'>
-              {t('Liturgical Color: {{color}}', { color: 'Green' })}
+              {t('Cor Litúrgica: {{color}}', { color })}
             </Text>
             <Text fontWeight='bold' fontSize='$5'>
-              {t('Tuesday')}
+              {date.weekDay}
             </Text>
           </YStack>
         </XStack>
