@@ -2,7 +2,7 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import {
   DarkTheme,
   DefaultTheme,
-  ThemeProvider,
+  ThemeProvider as NavigationThemeProvider,
 } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
@@ -12,6 +12,8 @@ import 'react-native-reanimated';
 import '@/i18n';
 
 import { useColorScheme } from '@/components/useColorScheme';
+import { createTamagui, TamaguiProvider } from 'tamagui';
+import { config } from '@tamagui/config';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -52,13 +54,21 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
+  const tamaguiConfig = createTamagui(config);
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
-        <Stack.Screen name='modal' options={{ presentation: 'modal' }} />
-      </Stack>
-    </ThemeProvider>
+    <NavigationThemeProvider
+      value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
+    >
+      <TamaguiProvider
+        defaultTheme={colorScheme?.toString()}
+        config={tamaguiConfig}
+      >
+        <Stack>
+          <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
+          <Stack.Screen name='modal' options={{ presentation: 'modal' }} />
+        </Stack>
+      </TamaguiProvider>
+    </NavigationThemeProvider>
   );
 }

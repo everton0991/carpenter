@@ -1,5 +1,6 @@
-const tintColorLight = '#2f95dc';
-const tintColorDark = '#fff';
+// TODO - Unify all Colors theme in one
+const tintColorLight = 'violet';
+const tintColorDark = 'violet';
 
 export default {
   light: {

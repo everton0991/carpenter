@@ -3,18 +3,23 @@
  * https://docs.expo.io/guides/color-schemes/
  */
 
-import { Text as DefaultText, View as DefaultView } from 'react-native';
+import {
+  YStack as DefaultView,
+  Text as DefaultText,
+  YStackProps as DefaultViewProps,
+  TextProps as DefaultTextProps,
+} from 'tamagui';
 
 import Colors from '@/constants/Colors';
 import { useColorScheme } from './useColorScheme';
 
-type ThemeProps = {
+export type ThemeProps = {
   lightColor?: string;
   darkColor?: string;
 };
 
-export type TextProps = ThemeProps & DefaultText['props'];
-export type ViewProps = ThemeProps & DefaultView['props'];
+export type TextProps = ThemeProps & DefaultTextProps;
+export type ViewProps = ThemeProps & DefaultViewProps;
 
 export function useThemeColor(
   props: { light?: string; dark?: string },
@@ -37,6 +42,7 @@ export function Text(props: TextProps) {
   return <DefaultText style={[{ color }, style]} {...otherProps} />;
 }
 
+// TODO - Prefer to use this or tamagui Stack
 export function View(props: ViewProps) {
   const { style, lightColor, darkColor, ...otherProps } = props;
   const backgroundColor = useThemeColor(
