@@ -1,23 +1,46 @@
-import { format } from 'date-fns';
 import { useEffect, useState } from 'react';
+import { format } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
+import { LITURGY_API_URL } from '@/constants/Configuration';
+
+interface Liturgy {
+  liturgia?: string;
+  cor?: string;
+  primeiraLeitura?: {
+    titulo: string;
+    referencia: string;
+    texto: string;
+  };
+  segundaLeitura?: {
+    titulo: string;
+    referencia: string;
+    texto: string;
+  };
+  salmo?: {
+    refrao: string;
+    referencia: string;
+    texto: string;
+  };
+  evangelho?: {
+    titulo: string;
+    referencia: string;
+    texto: string;
+  };
+}
 
 export const useLiturgyData = () => {
-  const [liturgyData, setLiturgyData] = useState<any>({});
+  const [liturgyData, setLiturgyData] = useState<Liturgy>({});
+  const { liturgia, cor, primeiraLeitura, segundaLeitura, salmo, evangelho } =
+    liturgyData;
   const date = new Date();
 
-  // TODO - Move this to a Hook/Helper
   useEffect(() => {
     const fetchDailyLiturgy = async () => {
-      console.log({
-        day: format(date, 'dd'),
-        month: format(date, 'MM'),
-        year: format(date, 'y'),
-      });
       const todaysLiturgy = await fetch(
-        `https://liturgia.up.railway.app/?dia=${format(
+        `${LITURGY_API_URL}?dia=${format(date, 'dd')}&mes=${format(
           date,
-          'dd'
-        )}&mes=${format(date, 'MM')}&ano=${format(date, 'y')}`
+          'MM'
+        )}&ano=${format(date, 'y')}`
       );
       const response = await todaysLiturgy.json();
       setLiturgyData(response);
@@ -26,30 +49,34 @@ export const useLiturgyData = () => {
     fetchDailyLiturgy();
   }, []);
 
-  // TODO - Rename returned object properties
   return {
-    title: liturgyData.liturgia,
-    color: liturgyData.cor,
+    title: liturgia,
+    color: cor,
     date: {
       day: format(date, 'dd'),
-      month: format(date, 'MMM'),
       year: format(date, 'y'),
-      weekDay: format(date, 'eeee'),
+      month: format(date, 'MMM', { locale: ptBR }),
+      weekDay: format(date, 'eeee', { locale: ptBR }),
     },
     firstRead: {
-      title: liturgyData.primeiraLeitura?.titulo,
-      ref: liturgyData.primeiraLeitura?.referencia,
-      text: liturgyData.primeiraLeitura?.texto,
+      title: primeiraLeitura?.titulo,
+      ref: primeiraLeitura?.referencia,
+      text: primeiraLeitura?.texto,
+    },
+    secondRead: {
+      title: segundaLeitura?.titulo,
+      ref: segundaLeitura?.referencia,
+      text: segundaLeitura?.texto,
     },
     psalm: {
-      chorus: liturgyData.salmo?.refrao,
-      ref: liturgyData.salmo?.referencia,
-      text: liturgyData.salmo?.texto,
+      chorus: salmo?.refrao,
+      ref: salmo?.referencia,
+      text: salmo?.texto,
     },
     gospel: {
-      title: liturgyData.evangelho?.titulo,
-      ref: liturgyData.evangelho?.referencia,
-      text: liturgyData.evangelho?.texto,
+      title: evangelho?.titulo,
+      ref: evangelho?.referencia,
+      text: evangelho?.texto,
     },
   };
 };

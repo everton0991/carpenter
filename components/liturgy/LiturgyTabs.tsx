@@ -4,22 +4,28 @@ import { useTranslation } from 'react-i18next';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import { useWindowDimensions } from 'react-native';
 import Colors from '@/constants/Colors';
-import { FirstReading, Gospel, Psalm } from './LiturgyTabContent';
+import { FirstRead, SecondRead, Gospel, Psalm } from './LiturgyTabContent';
+import { useLiturgyData } from '@/hooks/useLiturgyData';
 
 const renderScene = SceneMap({
-  'first-reading': FirstReading,
+  'first-read': FirstRead,
+  'second-read': SecondRead,
   psalm: Psalm,
   gospel: Gospel,
 });
 
 export default function LiturgyTabs() {
   const { t } = useTranslation();
+  const { secondRead } = useLiturgyData();
   const colorScheme = useColorScheme();
 
   const routes = [
-    { key: 'first-reading', title: t('1 LEITURA') },
-    { key: 'psalm', title: t('SALMO') },
-    { key: 'gospel', title: t('EVANGELHO') },
+    { key: 'first-read', title: t('1° Leitura') },
+    ...(secondRead.title
+      ? [{ key: 'second-read', title: t('2° Leitura') }]
+      : []),
+    { key: 'psalm', title: t('Salmo') },
+    { key: 'gospel', title: t('Evangelho') },
   ];
 
   const layout = useWindowDimensions();

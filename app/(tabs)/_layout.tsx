@@ -43,8 +43,8 @@ export default function TabLayout() {
       ),
     },
     {
-      name: 'homily',
-      title: t('Homilia'),
+      name: 'bible',
+      title: t('Biblia'),
       icon: ({ color }: { color: string }) => (
         <TabBarIcon name='subway' color={color} />
       ),

@@ -9,6 +9,7 @@ export default function TabOneScreen() {
   const { t } = useTranslation();
   const { title, color, date } = useLiturgyData();
 
+  // TODO - Check network connection and show a user friendly UI
   // TODO - Move Date Header to its own component to be reused
   // TODO - Ideally move everything with styling to Themed.tsx
   return (

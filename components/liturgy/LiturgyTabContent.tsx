@@ -30,13 +30,24 @@ function NormalText({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function FirstReading() {
+export function FirstRead() {
   const { firstRead } = useLiturgyData();
   return (
     <ViewContainer>
       <TitleText>{firstRead.ref}</TitleText>
       <TitleText>{firstRead.title}</TitleText>
       <NormalText>{firstRead.text}</NormalText>
+    </ViewContainer>
+  );
+}
+
+export function SecondRead() {
+  const { secondRead } = useLiturgyData();
+  return (
+    <ViewContainer>
+      <TitleText>{secondRead.ref}</TitleText>
+      <TitleText>{secondRead.title}</TitleText>
+      <NormalText>{secondRead.text}</NormalText>
     </ViewContainer>
   );
 }
