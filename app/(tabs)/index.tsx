@@ -27,7 +27,7 @@ export default function TabOneScreen() {
           </YStack>
 
           <YStack gap='$2'>
-            <Text fontWeight='bold' fontSize='$5'>
+            <Text fontWeight='bold' width='80%' fontSize='$5'>
               {title}
             </Text>
             <Text fontWeight='bold' fontSize='$5'>

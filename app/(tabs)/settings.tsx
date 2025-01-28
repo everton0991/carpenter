@@ -1,38 +1,13 @@
-import { StyleSheet } from 'react-native';
-
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
-import { useTranslation } from 'react-i18next';
+import { ContainerXStack } from '@/components/Styled';
+import { YStack } from 'tamagui';
+import SettingsMenu from '@/components/settings/SettingsMenu';
 
 export default function SettingsScreen() {
-  const { t } = useTranslation();
-
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{t('Settings')}</Text>
-      <View
-        style={styles.separator}
-        lightColor='#eee'
-        darkColor='rgba(255,255,255,0.1)'
-      />
-      <EditScreenInfo path='app/(tabs)/settings.tsx' />
-    </View>
+    <ContainerXStack padding='$0'>
+      <YStack padding='$4' marginBottom='$4'>
+        <SettingsMenu />
+      </YStack>
+    </ContainerXStack>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});

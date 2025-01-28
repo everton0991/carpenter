@@ -1,7 +1,10 @@
 import React from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs } from 'expo-router';
-import { Pressable } from 'react-native';
+import {
+  // Link,
+  Tabs,
+} from 'expo-router';
+// import { Pressable } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useTranslation } from 'react-i18next';
@@ -11,7 +14,7 @@ function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
   color: string;
 }) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
+  return <FontAwesome size={28} style={{ marginBottom: -6 }} {...props} />;
 }
 
 export default function TabLayout() {
@@ -23,30 +26,31 @@ export default function TabLayout() {
   const menu = [
     {
       name: 'index',
-      title: t('Liturgia'),
+      title: t('Liturgia do Dia'),
       icon: ({ color }: { color: string }) => (
-        <TabBarIcon name='book' color={color} />
+        <TabBarIcon name='calendar' color={color} />
       ),
-      headerInfo: () => (
-        <Link href='/modal' asChild>
-          <Pressable>
-            {({ pressed }) => (
-              <FontAwesome
-                name='info-circle'
-                size={25}
-                color={Colors[colorScheme ?? 'light'].text}
-                style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-              />
-            )}
-          </Pressable>
-        </Link>
-      ),
+      // TODO - Uncomment when modal is needed
+      // headerInfo: () => (
+      //   <Link href='/modal' asChild>
+      //     <Pressable>
+      //       {({ pressed }) => (
+      //         <FontAwesome
+      //           name='info-circle'
+      //           size={25}
+      //           color={Colors[colorScheme ?? 'light'].text}
+      //           style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+      //         />
+      //       )}
+      //     </Pressable>
+      //   </Link>
+      // ),
     },
     {
       name: 'bible',
-      title: t('Biblia'),
+      title: t('Biblia de Jerusalem'),
       icon: ({ color }: { color: string }) => (
-        <TabBarIcon name='subway' color={color} />
+        <TabBarIcon name='book' color={color} />
       ),
     },
     {
@@ -77,8 +81,9 @@ export default function TabLayout() {
           name={item.name}
           options={{
             title: item.title,
+            tabBarLabel: '',
             tabBarIcon: item.icon,
-            headerRight: item.headerInfo,
+            // headerRight: item.headerInfo,
           }}
         />
       ))}
