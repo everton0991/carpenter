@@ -1,0 +1,222 @@
+{
+  "Fevereiro": {
+    "1": {
+      "santo": "Santa Brígida da Irlanda",
+      "historia": {
+        "ano_nascimento": "c. 451",
+        "local_origem": "Forte de Kildare, Irlanda",
+        "descricao": "Brígida é uma das padroeiras da Irlanda e fundadora de um mosteiro em Kildare. Ela é conhecida por suas obras de caridade e por ser uma figura central na espiritualidade irlandesa."
+      }
+    },
+    "2": {
+      "santo": "Apresentação do Senhor",
+      "historia": {
+        "descricao": "Celebra a apresentação de Jesus no Templo e a purificação de Maria, conforme a tradição judaica. Este evento destaca a revelação de Jesus como o Messias."
+      }
+    },
+    "3": {
+      "santo": "São Lourenço de Cantuária",
+      "historia": {
+        "ano_nascimento": null,
+        "local_origem": null,
+        "descricao": "Lourenço foi um dos primeiros arcebispos de Cantuária e ajudou a estabelecer a Igreja na Inglaterra após a missão de Santo Agostinho."
+      }
+    },
+    "4": {
+      "santo": "São João de Brito",
+      "historia": {
+        "ano_nascimento": "1647",
+        "local_origem": "Lisboa, Portugal",
+        "descricao": "Missionário jesuíta na Índia, João de Brito dedicou sua vida à evangelização e foi martirizado em 1693 por sua fé."
+      }
+    },
+    "5": {
+      "santo": "Santa Águeda",
+      "historia": {
+        "ano_nascimento": null,
+        "local_origem": null,
+        "descricao": "Virgem e mártir do século III, Águeda é venerada como padroeira das mulheres e dos enfermos. Ela sofreu perseguições durante o governo do imperador Décio."
+      }
+    },
+    "6": {
+      "santo": "Santa Doroteia",
+      "historia": {
+        "ano_nascimento": null,
+        "local_origem": null,
+        "descricao": "Virgem e mártir do século IV, Doroteia é conhecida por sua fé inabalável e por ter sido executada durante as perseguições aos cristãos."
+      }
+    },
+    "7": {
+      "santo": "Beato Pio IX",
+      "historia": {
+        "ano_nascimento": "1792",
+        "local_origem": "Senigallia, Itália",
+        "descricao": "Papa que governou a Igreja durante um período tumultuado. Ele é conhecido por ter proclamado o dogma da Imaculada Conceição em 1854."
+      }
+    },
+    "8": {
+      "santo": "São Jerônimo Emiliano",
+      "historia": {
+        "ano_nascimento": null,
+        "local_origem": null,
+        "descricao": "(Fundador da Congregação dos Servos dos Pobres, dedicou sua vida ao cuidado dos órfãos e necessitados.)"
+      }
+    },
+    "9": {
+      "santo": "Santa Apolônia",
+      "historia": {
+        "ano_nascimento": null,
+        "local_origem": null,
+        "descricao": "(Mártir no Egito do século III, Apolônia é venerada como padroeira dos dentistas devido às torturas que suportou em sua vida.)"
+      }
+    },
+    "10": {
+      "santo": "Santa Escolástica",
+      "historia": {
+        "ano_nascimento": null,
+        "local_origem": null,
+        "descricao": "(Irmã gêmea de São Bento, Escolástica é conhecida por sua vida dedicada à oração e à fundação de comunidades religiosas femininas.)"
+      }
+    },
+    "11": {
+      "santo": "Nossa Senhora de Lourdes",
+      "historia": {
+        "descricao": "Celebra as aparições da Virgem Maria a Santa Bernadete em Lourdes, França, em 1858."
+      }
+    },
+    "12": {
+      "santo": "Santa Eulália",
+      "historia": {
+        "ano_nascimento": null,
+        "local_origem": null,
+        "descricao": "Virgem e mártir que se destacou pela sua fé durante as perseguições romanas."
+      }
+    },
+    "13": {
+      "santo": "São Marciniano",
+      "historia": {
+        "ano_nascimento": null,
+        "local_origem": null,
+        "descricao": "Bispo que se destacou por sua liderança espiritual durante um período difícil."
+      }
+    },
+    "14": {
+      "santo": "São Valentim",
+      "historia": {
+        "ano_nascimento": "aproximadamente 226",
+        "local_origem": "Roma",
+        "descricao": "Mártir conhecido por sua defesa do matrimônio cristão."
+      }
+    },
+    "15": {
+      "santo": "Os 21 Mártires Coptas da Líbia",
+      "historia": {
+        "ano_nascimento": null,
+        "local_origem": "Líbia",
+        "descricao": "Mártires que foram executados por sua fé em Cristo em 2015."
+      }
+    },
+    "16": {
+      "santo": "Santo Onésimo",
+      "historia": {
+        "ano_nascimento": null,
+        "local_origem": null,
+        "descricao": "Escravo fugitivo que se tornou discípulo de São Paulo e foi posteriormente bispo."
+      }
+    },
+    "17": {
+      "santo": "Os Sete Santos Fundadores da Ordem dos Servos de Maria",
+      "historia": {
+        "ano_nascimento": "1233",
+        "local_origem": "Florença, Itália",
+        "descricao": "Fundadores da Ordem dos Servos de Maria, dedicaram suas vidas à oração e ao serviço."
+      }
+    },
+    "18": {
+      "santo": "São Teotónio",
+      "historia": {
+        "ano_nascimento": "1130",
+        "local_origem": "Portugal",
+        "descricao": "Religioso que ajudou na formação do monasticismo em Portugal."
+      }
+    },
+    "19": {
+      "santo": "Santa Belina",
+      "historia": {
+        "ano_nascimento": null,
+        "local_origem": null,
+        "descricao": "Virgem e mártir que viveu no século IV."
+      }
+    },
+    "20": {
+      "santo": "Santos Francisco e Jacinta Marto",
+      "historia": {
+        "ano_nascimento": "1908",
+        "local_origem": "Fátima, Portugal",
+        "descricao": "Crianças que testemunharam as aparições da Virgem Maria em Fátima."
+      }
+    },
+    "21": {
+      "santo": "São Pedro Damião",
+      "historia": {
+        "ano_nascimento": "1007",
+        "local_origem": "Ravenna, Itália",
+        "descricao": "Bispo e doutor da Igreja conhecido por suas reformas na vida monástica."
+      }
+    },
+    "22": {
+      "santo": "Cátedra de São Pedro",
+      "historia": {
+        "descricao": "Celebra a autoridade do apóstolo Pedro como líder da Igreja."
+      }
+    },
+    "23": {
+      "santo": "São Policarpo",
+      "historia": {
+        "ano_nascimento": "69",
+        "local_origem": "Esmirna",
+        "descricao": "Bispo e mártir que defendeu a fé cristã contra heresias."
+      }
+    },
+    "24": {
+      "santo": "São Sérgio",
+      "historia": {
+        "ano_nascimento": "c. 303",
+        "local_origem": "Roma",
+        "descricao": "Mártir venerado como um defensor da fé cristã."
+      }
+    },
+    "25": {
+      "santo": "São Luigi Versiglia",
+      "historia": {
+        "ano_nascimento": "1873",
+        "local_origem": "Itália",
+        "descricao": "Bispo missionário na China, martirizado junto com São Callisto Caravario."
+      }
+    },
+    "26": {
+      "santo": "Santo Alexandre do Egito",
+      "historia": {
+        "ano_nascimento": "c. 250",
+        "local_origem": "Egito",
+        "descricao": "Um dos primeiros padres da Igreja, conhecido por seus escritos sobre a Trindade."
+      }
+    },
+    "27": {
+      "santo": "São Gabriel de Nossa Senhora das Dores",
+      "historia": {
+        "ano_nascimento": "1838",
+        "local_origem": "Itália",
+        "descricao": "Religioso passionista conhecido por sua profunda devoção à Virgem Maria."
+      }
+    },
+    "28": {
+      "santo": "Santa Múnia",
+      "historia": {
+        "ano_nascimento": null,
+        "local_origem": null,
+        "descricao": "Virgem e mártir venerada na tradição católica."
+      }
+    }
+  }
+}
